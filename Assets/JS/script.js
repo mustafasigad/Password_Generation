@@ -3,18 +3,20 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = finalPassword;
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 
 }
 generateBtn .addEventListener("click", function() {
    // 
-pwrdlenght()
-numberChar()
-upperchart()
-lowercharact()
-specialCharact()  
+   pwrdlenght()
+   numberChar()
+   upperchart()
+   lowercharact()
+   specialCharact() 
+   specialCharacter()
+   writePassword()
  }
 );
  
@@ -70,13 +72,14 @@ for (var i = 0; i < letters.length; i++) {
 var letters_lower_upper_case=letters
 
 
+
 // -------------------------------------------------------------------------
 var letterArrayRandom=[];
 var SpecialArrayRandom=[];
 var special_Array=[];
 var numberArrayRandom=[];
 var numberArray=[];
-
+var finalPassword
 
 var specialCharacter = function() {
  var specialArray=[];
@@ -133,11 +136,7 @@ if (special==true && numbers==true,lowerLetter==true,upperLetter==true){
               
                   }
               console.log(SpecialArrayRandom)
-               
-}   
-
-
-console.log( letterArrayRandom)
+              console.log(letterArrayRandom)
 // adding the special character and numbers
           letterArrayRandom.unshift(SpecialArrayRandom[1]);
           letterArrayRandom.unshift(SpecialArrayRandom[0]);
@@ -149,13 +148,21 @@ console.log( letterArrayRandom)
        letterArrayRandom=letterArrayRandom.slice(0,userChoice)
           console.log( letterArrayRandom)
 
-   // function to shuffle the password 
+          // function to shuffle the password 
           function shuffle(array) {
             return array.sort(() => Math.random() - 0.5);
           }
    
-           var finalPassword = shuffle(letterArrayRandom).join("");
-
-          function generatePassword() {
+           finalPassword = shuffle(letterArrayRandom).join("");
+            function generatePassword() {
             return finalPassword;
           }
+          
+          generatePassword()
+          console.log(finalPassword)
+       
+}   
+
+
+
+
