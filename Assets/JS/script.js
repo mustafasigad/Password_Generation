@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = finalPassword;
+  var password = generatePassword() 
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 
@@ -15,7 +15,7 @@ generateBtn .addEventListener("click", function() {
    upperchart()
    lowercharact()
    specialCharact() 
-   specialCharacter()
+   generatePassword()
    writePassword()
  }
 );
@@ -81,7 +81,7 @@ var numberArrayRandom=[];
 var numberArray=[];
 var finalPassword
 
-var specialCharacter = function() {
+var generatePassword = function() {
  var specialArray=[];
 if (special==true && numbers==true,lowerLetter==true,upperLetter==true){
   //--------------------------------------------------------Usre chose everything to be true
@@ -148,19 +148,13 @@ if (special==true && numbers==true,lowerLetter==true,upperLetter==true){
        letterArrayRandom=letterArrayRandom.slice(0,userChoice)
           console.log( letterArrayRandom)
 
-          // function to shuffle the password 
-          function shuffle(array) {
-            return array.sort(() => Math.random() - 0.5);
-          }
-   
-           finalPassword = shuffle(letterArrayRandom).join("");
-            function generatePassword() {
-            return finalPassword;
-          }
-          
-          generatePassword()
-          console.log(finalPassword)
+         
+        return letterArrayRandom
        
+            
+                    
+        
+          
 }   
 
 
