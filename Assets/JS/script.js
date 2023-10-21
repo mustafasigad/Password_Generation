@@ -6,8 +6,8 @@ function writePassword() {
   var password = generatePassword() 
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-
 }
+
 // This is ran as soon the user click on the Generate Password button 
 generateBtn .addEventListener("click", function() {
  
@@ -18,6 +18,7 @@ generateBtn .addEventListener("click", function() {
    specialCharact() 
    writePassword()
  }
+ 
 );
    //--------------------------------------------------------------------------
   var userChoice; // Declare userChoice as a global variable
@@ -144,7 +145,6 @@ if (special==true && numbers==true,lowerLetter==true,upperLetter==true){
           }
            finalPassword = shuffle(letterArrayRandom).join("");
          
-
             return finalPassword;
   
          }
